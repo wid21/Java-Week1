@@ -4,128 +4,151 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
         Scanner data = new Scanner(System.in);
-         //Question 1
-        int n1 = 125 ;
-        int n2 =24 ;
-        int Sum = n1 + n2 ;
-        int sub = n1 - n2 ;
-        int multi = n1 * n2 ;
-        int div = n1/ n2;
-        int mod = n1 % n2;
-       System.out.println("the sum is " + Sum );
-       System.out.println("the subtraction is " + sub);
-       System.out.println("the multiplication is " + multi);
-       System.out.println("the division is " + div);
-       System.out.println("the reminder is " + mod);
 
-
-       //Question 2
-        String word = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
-        System.out.println(word.toLowerCase());
-
+        //Question 1
+        for (int i =0 ; i<=100 ; i++){
+           if (i % 3 ==0){
+               System.out.println("Fizz");
+           }
+            if (i % 5 ==0 ){
+               System.out.println("Buzz");
+           }
+           if (i % 3 ==0 && i % 5 ==0){
+               System.out.println("FizzBuzz");
+           }
+           else
+           {
+               System.out.println(i);;
+           }
+        }
+//########################################################
+        //Question 2
+        String str = ("The quick brown fox");
+        String str2= "";
+        for (int i=str.length()-1; i>=0 ;i--){
+            str2+=str.charAt(i);
+        }
+        System.out.println(str2);
+//########################################################
         //Question 3
-
-        System.out.println("Enter word ");
-        String word2  = data.nextLine();
-        System.out.println("Enter index ");
-        int index = data.nextInt();
-        System.out.println(word2.charAt(index));
-
-        // Question 4
-
-        System.out.println("Enter number ");
-        int number = data.nextInt();
-        if (number % 2 == 0) {
-            System.out.println("1");
-        } else {
-            System.out.println("0");
+   System.out.println("enter number to show the multiplication table ");
+    int b = data.nextInt();
+    for(int i=0; i<10 ; i++){
+       System.out.println(b+ " X " + (i+1) + " = " + b * (i+1));
+      }
+//########################################################
+        //Question 4
+        System.out.println("enter a num");
+        int u = data.nextInt();
+        int fac = 1;
+        int i  ;
+        for ( i =1 ; i <= u ; i++){
+            fac *= i;
         }
-
-        //Question5
-          System.out.println("Enter your role");
-          String role = data.nextLine();
-         if (role.equalsIgnoreCase("admin")){
-             System.out.println(" welcome " + role);
-          }
-         else if (role.equalsIgnoreCase("superuser"))
-         {
-             System.out.println( "welcome " + role);
-          }
-         else
-        {
-            System.out.println("welcome user");
+      System.out.println("Factorial of the the number " + (i-1) + " is " + fac);
+//########################################################
+        //Question 5
+        int c=1;
+        System.out.println("enter first number");
+        int a = data.nextInt();
+        System.out.println("enter second number");
+        int d = data.nextInt();
+        while (d !=0){
+           c  *= a ;
+           d--;
         }
-
-       // Question 6
-
-         System.out.println("Enter first number");
-         int num1 = data.nextInt();
-         System.out.println("Enter second number");
-         int num2 = data.nextInt();
-         System.out.println("Enter third number");
-         int num3 = data.nextInt();
-         int sum = num1 + num2 ;
-         if (sum == num3 )
-        {
-            System.out.println("the result is true");
+        System.out.println("the result of exponential number "+ a +" is " + c);
+//#######################################################
+        // Question 6
+        int k ;
+        int m =0 ;
+        int even =0;
+        int odd=0;
+        while (m != -1 ){
+            System.out.println("enter number or -1 tp quit ");
+            k=data.nextInt();
+            if (k==-1){
+                break;
+            }
+            if (k % 2==0){
+               even = even+ k;
+            }
+            else if  (k % 2 !=0){
+                odd=odd+k;   }
+                 m++;
         }
-         else
-        {
-            System.out.println("the result is false ");
-        }
+  System.out.println("the sum of even numbers are : "+ even );
+  System.out.println("the sum of odd numbers are : " +odd );
+//#############################################################
 
         //Question 7
-        System.out.println("Enter 1st  number");
-         int Num1 = data.nextInt();
-         System.out.println("Enter 2nd number ");
-         int Num2 = data.nextInt();
-         System.out.println("Enter 3rd number");
-         int Num3 = data.nextInt();
-         if (Num1 >= Num2 && Num1 >= Num3)
-        {
-            System.out.println("The greatest: " + Num1 );
+        int count = 0;
+        System.out.println("Enter postive number ");
+        int num = data.nextInt();
+        while (num < 0) {
+            System.out.println("Wrong input try again !!!");
+             num = data.nextInt();
+        }  if (num >0 ) {
+            for (int in = 1; in <= num; in++) {
+                if (num % in == 0) {
+                    count++;
+                }
+            }
+            if (count == 2) {
+                System.out.printf(num + " It is a prime number ");
+            } else {
+                System.out.printf(num + " It is not a prime number ");
+            }
         }
-         else if (Num2>= Num1 && Num2 >= Num3)
-        {
-            System.out.println("The greatest: " + Num2);
+//########################################################
+       // Question 8
+     int p =0;  int n=0;  int z=0;
+     boolean en = true;
+         while (en){
+       System.out.println("Enter number ");
+         int  j = data.nextInt();
+               if (j > 0) {
+                    p++;
+                } else if (j < 0) {
+                    n++;
+                } else {
+                    z++;
+                }
+           System.out.println("Enter y to continue");
+             String choice = data.nextLine();
+             choice=data.next();
+             en = choice.equalsIgnoreCase("y");
+            }
+         System.out.println("postive number are " + p);
+         System.out.println("negative number are " + n);
+         System.out.println("zero number are " + z);
+
+//########################################################
+        //Question 9
+        for (int x=1; x<=4 ; x++){
+            System.out.println("Week"+ x);
+            for (int j =1 ; j <= 7; j++){
+                System.out.println("Day"+ j);
+            }
         }
-         else
-         {
-             System.out.println("The greatest: " + Num3);
-         }
+//########################################################
 
-        //Question 8
-        System.out.println("Enter number between 1 to 7 to inquirer week days ");
-        int n = data.nextInt();
-        switch (n)
-        {
-            case 1 :
-                System.out.println("Monday");
+        //Question 10
+        System.out.print("Enter a word: ");
+        String word = data.nextLine().toLowerCase();
+        boolean isPalindrome = true;
+        for (int g = 0, j = word.length() - 1; g < j; g++, j--) {
+            if (word.charAt(g) != word.charAt(j)) {
+                isPalindrome = false;
                 break;
-            case 2:
-                System.out.println("Tuesday");
-                break;
-            case 3:
-                System.out.println("Wednesday");
-                break;
-            case 4:
-                System.out.println("Thursday");
-                break;
-            case 5:
-                System.out.println("Friday");
-                break;
-
-            case 6:
-                System.out.println("Saturday");
-                break;
-
-            case 7:
-                System.out.println("Sunday");
-                break;
-            default:
-                System.out.println("invalid number try again");
+            }
         }
+        if (isPalindrome) {
+            System.out.println(word + " is a palindrome!");
+        } else {
+            System.out.println(word + " is not a palindrome.");
+        }
+//###########################################################
     }
 }
