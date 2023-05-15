@@ -1,0 +1,31 @@
+Wid Seraj Alzainy HW12
+Output
+
+Qusetion 1 
+
+hey from Message 1
+
+Question 2 
+
+hey from Message 1
+hey from Message 2
+
+Question 3 
+
+hey from Message 1
+hey from Message 3
+hey from Message 2
+
+Question 4
+
+hey from Message 1
+hey from Controller 
+hey from Message 3
+hey from Message 2
+
+Question 5
+
+hey from Message 3
+hey from Message 2
+hey from Controller 
+hey from Message 1
