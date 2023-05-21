@@ -1,0 +1,61 @@
+
+create database store;
+
+create table users( id int primary key , fullname varchar(20), email varchar(20) unique ,
+gender varchar(1) check (gender= 'f' or gender= 'm' ) ,date_of_bearth varchar(15),created_at datetime , country_code int ,
+   foreign key (country_code) references countries(code)
+
+);
+
+create table countries (code int primary key , name varchar(20) unique , countinet_name varchar(20) not null );
+
+create table orders (id int primary key , user_id int , status varchar(6) check ( status='start' or status='finish' ),
+ created_at datetime , foreign key (user_id) references users(id));
+
+create table orders_product (order_id int , product_id int , quantity int default 0, foreign key (product_id) references product(id) , foreign key (order_id)references orders(id));
+
+create table product (
+id int primary key,name varchar(6) not null,price int default 0,status varchar(10) check (status = 'valid' or status = 'expired'),
+created_at datetime
+);
+
+ALTER TABLE product
+MODIFY COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE orders
+MODIFY COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE users
+MODIFY COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+insert into countries
+values (1,'wid','UKA');
+
+insert into users values(1,'wid seraj','wid@.com', 'f','10/4/2000', NOW(),1);
+
+insert into orders values (1,1,'start',NOW());
+
+insert into product values (1,'omar',500,'valid',NOW());
+insert into product values (2,'anan',900,'expired',NOW());
+
+insert into orders_product values (1,1,10);
+
+update countries set countinet_name='KSA' where code= 1;
+
+alter table orders_product
+drop foreign key orders_product_ibfk_1;
+
+alter table orders_product
+add constraint orders_product_ibfk_1
+foreign key (product_id) references product(id)
+on delete cascade;
+
+delete from product where id=1;
+select *from countries;
+
+select * from product;
+insert into product values (3,'duna',800,'expired',NOW());
+insert into orders_product values (1,3,10);
+select * from orders_product;
+select * from users;
+
