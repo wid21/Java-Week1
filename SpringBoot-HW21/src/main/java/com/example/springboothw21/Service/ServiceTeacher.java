@@ -38,7 +38,7 @@ public class ServiceTeacher {
     public void updateTeacher(Teacher teacher,Integer id){
         Teacher oldTeacher= repositoryTeacher.findTeacherById(id);
         if(oldTeacher==null){
-            throw new ApiException("customer not found");
+            throw new ApiException("teacher not found");
         }
 
         oldTeacher.setName(teacher.getName());
